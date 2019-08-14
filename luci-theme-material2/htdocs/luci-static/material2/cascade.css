@@ -1,13 +1,13 @@
 /**
- *  Material2 is a theme for LuCI. It is based on luci-theme-rosy
- *  luci-theme-material2
-       Copyright 2019 Handsomeyingyan <handsomeyingyan@gmail.com>
+ *  Rosy is a theme for LuCI. It is based on luci-theme-bootstrap
+ *
  *  luci-theme-rosy
  *     Copyright 2018 Rosy Song <rosysong@rosinson.com>
  *     Copyright 2018 Yan Lan Shen <yanlan.shen@rosinson.com>
+ *     Copyright 2019 TsLenMo <tslenmo@foxmail.com>
  *
  *   Have a bug? Please create an issue here on GitHub!
- *       https://github.com/handsomeyingyan/luci-theme-material2/issues
+ *       https://github.com/rosywrt/luci-theme-rosy/issues
  *
  *  luci-theme-bootstrap:
  *      Copyright 2008 Steven Barth <steven@midlink.org>
@@ -31,13 +31,13 @@
     font-style: normal;
 }
 
-@font-face {
+ @font-face {
     font-family: "advancedtomato";
     src:url("../fonts/advancedtomato.eot");
     src:url("../fonts/advancedtomato.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/advancedtomato.woff") format("woff"),
-    url("../fonts/advancedtomato.ttf") format("truetype"),
-    url("../fonts/advancedtomato.svg#advancedtomato") format("svg");
+        url("../fonts/advancedtomato.woff") format("woff"),
+        url("../fonts/advancedtomato.ttf") format("truetype"),
+        url("../fonts/advancedtomato.svg#advancedtomato") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -48,8 +48,11 @@
 .tbody { display: table-row-group; }
 .tfoot { display: table-footer-group; }
 .td, .th {
+    line-height: normal;
     vertical-align: middle;
     text-align: center;
+    word-break:break-all;
+    word-wrap:break-word;
     display: table-cell;
     padding: .8em;
     border-bottom: 1px solid #eee;
@@ -87,7 +90,7 @@
 .col-7 { flex: 7 7 210px !important; -webkit-flex: 7 7 210px !important; }
 .col-8 { flex: 8 8 240px !important; -webkit-flex: 8 8 240px !important; }
 .col-9 { flex: 9 9 270px !important; -webkit-flex: 9 9 270px !important; }
-.col-10 { flex: 10 10 300px !important; -webkit-flex: 10 10 300px !important; }
+.col-10 { flex: 10 10 300px !important; width: 60%; -webkit-flex: 10 10 300px !important; }
 
 .cbi-button-up,
 .cbi-button-down,
@@ -225,7 +228,7 @@ footer > a {
     height: 100%;
     z-index: 1000;
     display: block;
-    background-color: #ffffff;
+    background-color: #fff;
     top: 0;
     z-index: 3000;
 }
@@ -302,7 +305,7 @@ header .container {
 }
 
 .success {
-    background-color: #0099cc !important;
+    background-color: #fff !important;
 }
 
 .alert-message {
@@ -372,6 +375,11 @@ header .container {
     display: block;
 }
 
+.main > .main-left > .nav > li:nth-last-child(1) {
+    font-size: 10pt;
+    height:40px;
+}
+
 .main > .main-left .nav > li {
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -380,6 +388,7 @@ header .container {
 .main > .main-left .nav > .slide {
     padding: 0;
 }
+
 .main > .main-left > .nav > .slide > a[data-title="Status"]:before {
     content: "\e026";
     display: inline-block;
@@ -397,6 +406,7 @@ header .container {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
+
 .main > .main-left > .nav > .slide > a:before {
     display: inline-block;
     top: -1px;
@@ -426,6 +436,7 @@ header .container {
 .main > .main-left > .nav > .slide > a[data-title="Network"]:before {
     content: "\e00e";
 }
+
 .main > .main-left > .nav > .slide > a[data-title="VPN"]:before {
     content: "\e029";
 }
@@ -450,6 +461,7 @@ header .container {
     padding-left:36px;
     line-height:40px;
 }
+
 .main > .main-left > .nav > li > a[data-title="Logout"]:before {
     content: "\e005";
     display: inline-block;
@@ -492,6 +504,7 @@ header .container {
 
 .main > .main-left .nav > .slide > ul {
     display: none;
+    list-style:dotted;
 }
 
 .main > .main-left .nav > .slide > .menu {
@@ -510,7 +523,7 @@ header .container {
 
 .main > .main-left .nav > .slide > .menu.active,
 .main > .main-left .nav > .slide > .menu:hover {
-    background-color: #eeeeee;
+    background-color: #b0bec5;
 }
 
 .main > .main-left .nav > .slide > .slide-menu > li {
@@ -687,7 +700,7 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 #memtotal > div {
     width: 100% !important;
     height: 1.2rem !important;
-    background-color: #adcdd7;
+    background-color: #fff;
     border: none !important;
     border-radius: 20px;
     overflow: hidden;
@@ -701,7 +714,7 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 #memtotal > div > div {
     height: 100% !important;
     border-radius: 20px;
-    background-color: #468ea4 !important;
+    background-color: #0099cc !important;
 }
 
 #swaptotal > div > div > div,
@@ -719,7 +732,7 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 #membuff small,
 #conns small,
 #memtotal small {
-    color: #fff
+    color: #000
 }
 
 /* fix multiple table */
@@ -795,7 +808,7 @@ td > table > tbody > tr > td,
 .cbi-button-save.important,
 .cbi-button-positive.important {
     color: #fff;
-    background-color: #468ea4;
+    background-color: #0099cc;
 }
 
 .cbi-button-remove.important,
@@ -803,6 +816,7 @@ td > table > tbody > tr > td,
 .cbi-button-negative.important {
     color: #fff;
     background-color: #d9534f;
+    border: 1px solid #d9534f;
 }
 
 .cbi-button-find,
@@ -810,36 +824,36 @@ td > table > tbody > tr > td,
 .cbi-button-up,
 .cbi-button-down,
 .cbi-button-neutral {
-    border: 1px solid #468ea4;
-    background-color: transparent;
-    color: #468ea4;
+    border: 1px solid #0099cc;
+    background-color: #0099cc;
+    color: #fff;
 }
 
 .cbi-button-edit,
 .cbi-button-apply,
 .cbi-button-reload,
 .cbi-button-action {
-	color: #0099cc;
+	color: #fff;
     border: 1px solid #0099cc;
-    background-color: transparent;
+    background-color: #0099cc;
 }
 
 .cbi-page-actions .cbi-button-apply + .cbi-button-save,
 .cbi-button-add,
 .cbi-button-save,
 .cbi-button-positive {
-    color: #468ea4;
-    border: 1px solid #468ea4;
-    background-color: transparent;
+    color: #fff;
+    border: 1px solid #f4c481;
+    background-color: #f4c481;
 }
 
 .cbi-section-remove > .cbi-button,
 .cbi-button-remove,
 .cbi-button-reset,
 .cbi-button-negative {
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    background-color: transparent;
+    color: #fff;
+    border: 1px solid #d9534f;
+    background-color: #d9534f;
 }
 
 .cbi-page-actions .cbi-button-link:first-child {
@@ -867,7 +881,7 @@ td > table > tbody > tr > td,
 
 .cbi-tabmenu li.cbi-tab,
 .cbi-tabmenu li.cbi-tab:hover {
-    background-color: #fff;
+    background-color: #f5f5f5;
 }
 
 .cbi-tabmenu li:hover {
@@ -908,7 +922,7 @@ td > table > tbody > tr > td,
 }
 
 .tabs > li a {
-    color: #468EA4;
+    color: #fffff;
     font-size: 14px;
     position: relative;
     z-index: 1;
@@ -932,15 +946,15 @@ td > table > tbody > tr > td,
 
 .tabs > li.active::after {
     width: calc(100% + 4px);
-    background-color: #468ea473;
+    background-color: #eeeee;
 }
 
 .cbi-section-node-tabbed {
     padding: 0;
     margin-top: 0;
-    border-bottom: 1px solid #D4D4D4;
+    /*border-bottom: 1px solid #D4D4D4;
     border-left: 1px solid #D4D4D4;
-    border-right: 1px solid #D4D4D4;
+    border-right: 1px solid #D4D4D4;*/
 }
 
 #cbi-dropbear-_dummy .table {
@@ -1338,7 +1352,7 @@ td > .ifacebadge,
 }
 
 .network-status-table .ifacebox-body > span {
-    flex: 10 10 auto;
+    flex: 10 10;
 }
 
 .network-status-table .ifacebox-body > div {
@@ -1683,7 +1697,7 @@ header > .container > .pull-right > * {
 }
 
 .logout {
-    background-color: #f0ad4e;
+    background-color: #fffff;
 }
 
 .logout a {
@@ -1691,7 +1705,7 @@ header > .container > .pull-right > * {
 }
 
 .notice {
-    background-color: #468EA4;
+    background-color: #fff;
 }
 
 .showSide {
@@ -1710,7 +1724,7 @@ header > .container > .pull-right > * {
 
 /* fix Main Login*/
 .login {
-	background: #fff
+	background: #e0e0e0 ;
 }
 
 .login > .main > .main-left {
@@ -1758,8 +1772,8 @@ header > .container > .pull-right > * {
 .login .alert-message {
 	margin: 0;
 	padding: 2rem;
-    background: #3E4A62 !important;
-    border: 1px solid #4A5368;
+    background: #fff !important;
+    border: 1px solid #fff;
     border-radius: 20px;
     color: #fff;
     font-size: 14px;
@@ -1856,7 +1870,7 @@ header > .container > .pull-right > * {
 .login > .main form > .cbi-page-actions .cbi-button-reset {
 	margin-left: -4px;
 	border-radius: 0 20px 20px 0;
-	background-color: #0099cc;
+	background-color: #f0ad4e;
 }
 
 .login footer {
@@ -1893,7 +1907,7 @@ header > .container > .pull-right > * {
     top: 10px;
     left: 10px;
     bottom: 10px;
-    background-color: #ffffff;
+    background-color: #fffff;
     width: 100%;
     border-radius: 20px;
 }
@@ -1934,8 +1948,8 @@ header > .container > .pull-right > * {
 }
 
 .logged-in .main-right .alert-message a {
-    background-color: #468EA4;
-    color: #fff;
+    background-color: #fff;
+    color: #00000;
     padding: .5rem .8rem;
     font-size: 16px;
 }
@@ -2061,7 +2075,7 @@ body.lang_pl.login .cbi-value-title {
 
 @media screen and (max-width: 992px) {
     .login {
-        background: #0099cc;
+        background: #fffff;
     }
     
     .logged-in .main-left {
@@ -2099,6 +2113,7 @@ body.lang_pl.login .cbi-value-title {
         margin-right: 0.5rem;
         display: inline-block;
     }
+
 
     .showSide:before {
         content: "\e20e";
