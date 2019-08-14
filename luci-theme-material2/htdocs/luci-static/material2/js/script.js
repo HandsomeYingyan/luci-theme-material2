@@ -1,13 +1,12 @@
 /**
- *  Material2 is a theme for LuCI. It is based on luci-theme-rosy
- *  luci-theme-material2
-       Copyright 2019 Handsomeyingyan <handsomeyingyan@gmail.com>
+ *  Rosy is a theme for LuCI. It is based on luci-theme-bootstrap
+ *
  *  luci-theme-rosy
  *     Copyright 2018 Rosy Song <rosysong@rosinson.com>
  *     Copyright 2018 Yan Lan Shen <yanlan.shen@rosinson.com>
  *
  *   Have a bug? Please create an issue here on GitHub!
- *       https://github.com/handsomeyingyan/luci-theme-material2/issues
+ *       https://github.com/rosywrt/luci-theme-rosy/issues
  *
  *  luci-theme-bootstrap:
  *      Copyright 2008 Steven Barth <steven@midlink.org>
@@ -15,7 +14,6 @@
  *      Copyright 2012 David Menting <david@nut-bolt.nl>
  *
  *  Licensed to the public under the Apache License 2.0
- */
  */
 (function ($) {
     $(".loading").fadeOut();
@@ -145,8 +143,8 @@
         mainNodeName = mainNodeName.replace(/[ \t\n\r\/]+/g, "_").toLowerCase();
         $("body").addClass(mainNodeName);
     }
-    $(".cbi-button-up").val("");
-    $(".cbi-button-down").val("");
+    $(".cbi-button-up").val("");
+    $(".cbi-button-down").val("");
 
 
     /**
